@@ -4,14 +4,14 @@ title: '#4471 · three problems, not one'
 owner: support desk
 status: living
 reviewed: 2026-11-10
-signature: '4471'
+signature: 'v1.eyJzdWIiOiI2MTkzIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQyOTg1MzgsImV4cCI6MTc5NDM4NDkzOH0.r-Vm-dYHPcRLMRufvP3BdrwJLyjXTJPjmgGYwjuKm-0'
 ---
 
 <script>
   import CauseTable from '#lib/kb/CauseTable.svelte';
   import Callout from '#lib/kb/Callout.svelte';
   import RenderStamp from '#lib/kb/RenderStamp.svelte';
-  const signature = '4471';
+  const signature = 'v1.eyJzdWIiOiI2MTkzIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTQyOTg1MzgsImV4cCI6MTc5NDM4NDkzOH0.r-Vm-dYHPcRLMRufvP3BdrwJLyjXTJPjmgGYwjuKm-0';
 </script>
 
 [#4471](/kb/incidents/4471) merged every date report by subject. Read by cause, the 412 reports
