@@ -15,10 +15,10 @@ signature: 'v1.eyJzdWIiOiI2MTkzIiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpY
 </script>
 
 [#4471](/kb/incidents/4471) merged every date report by subject. Read by cause, the 412 reports
-hold three problems. Only the first has a fix.
+hold two problems. Only the first has a fix.
 
 <Callout kind="warn">
-Not one issue. Each problem has its own ticket in the
+Not one issue, two. Each problem has its own ticket in the
 [public repo](https://github.com/nagasai-mala/mega-s01e03-what-it-shows/issues).
 </Callout>
 
@@ -26,27 +26,25 @@ Not one issue. Each problem has its own ticket in the
 
 <CauseTable ticket={4471} />
 
-The table files the 5 one-day reports under `parser`, because it goes by tenant. Counted by what the
-reports say, `parser` is 374, `hint` is 33 and the one-day shift is 5. Together that is 412.
+The table counts by tenant: `parser` 379, `hint` 33, together 412. Five of the `parser` reports read as
+a one-day move; the desk counts them where they are filed.
 
 ## The problems
 
-1. **parser: 374 reports.** The shared parser reads dates month first; day-first tenants get them
+1. **parser: 379 reports.** The shared parser reads dates month first; day-first tenants get them
    flipped. Fixed in `fix(dates): parse dd/mm for eu locales`
-   ([issue 1](https://github.com/nagasai-mala/mega-s01e03-what-it-shows/issues/1)).
+   ([issue 1](https://github.com/nagasai-mala/mega-s01e03-what-it-shows/issues/1)). Five of these
+   (R-41202, R-41209, R-41236, R-41344, R-41620) read as a one-day move.
 2. **hint: 33 reports.** The booking-v3 form prints `MM/DD/YYYY` under the date field, so
    day-first tenants (alder.physio, copper.studio, pale.harbour) type month first. The parser fix
    does not touch this. The form is retired and the ticket is closed as won't fix, so these
    reports have no open ticket
    ([issue 2](https://github.com/nagasai-mala/mega-s01e03-what-it-shows/issues/2)).
-3. **one-day shift: 5 reports.** R-41202, R-41209, R-41236, R-41344 and R-41620 describe a day off
-   by one, not a month and day swapped. It looks like a timezone problem and needs its own look
-   ([issue 3](https://github.com/nagasai-mala/mega-s01e03-what-it-shows/issues/3)).
 
 ## Why the desk missed it
 
 Intake tags a report from the reporter's browser, which is a guess. The cause depends on the
 tenant's locale and booking form. Subject matching ([decision 0001](/kb/decisions/0001-dedupe-by-subject))
-merged all three into one ticket.
+merged both into one ticket.
 
 <RenderStamp {signature} />
